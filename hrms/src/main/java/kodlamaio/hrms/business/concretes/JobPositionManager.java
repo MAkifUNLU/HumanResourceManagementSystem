@@ -60,8 +60,8 @@ public class JobPositionManager implements JobPositionService{
 	}
 	
 	
-	private boolean isTitleExist(String titleName) {
-		if(this.jobPositionDao.findByTitleName(titleName) != null) {
+	private boolean isTitleExist(String jobTitle) {
+		if(this.jobPositionDao.findByJobTitle(jobTitle) != null) {
 			return false;
 		}
 		return true;

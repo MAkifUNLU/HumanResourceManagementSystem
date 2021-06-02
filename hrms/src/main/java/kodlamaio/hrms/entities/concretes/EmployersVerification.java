@@ -1,6 +1,7 @@
 package kodlamaio.hrms.entities.concretes;
 
-import java.util.Date;
+
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -34,6 +35,6 @@ public class EmployersVerification {
 	@Column(name = "created_at")
 	private Date createdAt;
 	
-	//boolean lı bişe lazım gibi
+
 	
 }
