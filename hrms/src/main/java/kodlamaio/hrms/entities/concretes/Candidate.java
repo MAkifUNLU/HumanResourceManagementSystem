@@ -38,7 +38,7 @@ public class Candidate extends User{
 	private boolean isVerified = false;
 	
 	@Column(name = "date_of_birth")
-	private Date dateOBirth;
+	private Date dateOfBirth;
 	
 	
 	
