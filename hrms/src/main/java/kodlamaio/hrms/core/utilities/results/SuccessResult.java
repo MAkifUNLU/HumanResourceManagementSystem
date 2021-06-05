@@ -1,4 +1,4 @@
-package kodlamaio.hrms.core.results;
+package kodlamaio.hrms.core.utilities.results;
 
 public class SuccessResult extends Result {
     public SuccessResult() {
