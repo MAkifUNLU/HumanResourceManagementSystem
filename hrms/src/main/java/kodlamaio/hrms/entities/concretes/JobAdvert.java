@@ -20,7 +20,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "job_adverts")
 @AllArgsConstructor
 @NoArgsConstructor
-public class JobAdvert {
+public class JobAdvert extends Base{
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,11 +30,14 @@ public class JobAdvert {
 	//@Column(name = "job_position_id")
 	//private int jobPositionId;
 	
-	@Column(name = "description")
-	private String description;
+	//@Column(name = "employer_id")
+	//private int employerId;
 	
 	//@Column(name = "city_id")
 	//private int cityId;
+	
+	@Column(name = "description")
+	private String description;
 	
 	@Column(name = "open_position_count")
 	private int openPositionCount;
@@ -44,19 +47,7 @@ public class JobAdvert {
 	
 	@Column(name = "is_open")
 	private boolean isOpen;
-	
-	@Column(name= "created_at", columnDefinition = "Date defult CURRENT_DATE")
-	private LocalDate createdAt = LocalDate.now();
-	
-	@Column(name= "is_active", columnDefinition = "boolean default true")
-	private boolean isActive = true;
-	
-	@Column(name= "is_deleted", columnDefinition = "boolean default false")
-	private boolean isDeleted = false;
-	
-	//@Column(name = "employer_id")
-	//private int employerId;
-	
+
 	@Column(name = "published_at")
 	private LocalDate publishedAt;
 	
@@ -78,20 +69,4 @@ public class JobAdvert {
 	@JoinColumn(name = "city_id")
 	private City city;
 	
-	public JobAdvert(int id, String description, int salaryMin, int salaryMax, int openPositionCount,
-			LocalDate deadline, LocalDate publishedAt, boolean isOpen, JobPosition jobPosition, Employer employer,
-			City city) {
-		super();
-		this.id = id;
-		this.description = description;
-		this.salaryMin = salaryMin;
-		this.salaryMax = salaryMax;
-		this.openPositionCount = openPositionCount;
-		this.deadline = deadline;
-		this.publishedAt = publishedAt;
-		this.isOpen = isOpen;
-		this.jobPosition = jobPosition;
-		this.employer = employer;
-		this.city = city;
-	}
 }

@@ -74,7 +74,7 @@ public class AuthManager implements AuthService{
 	public Result registerCandidate(Candidate candidate, String confirmPassword) {
 		
 		if (checkIfRealPerson(Long.parseLong(candidate.getNationalId()), candidate.getFirstName(),
-				candidate.getLastName(), candidate.getDateOfBirth().getDate()) == false) {
+				candidate.getLastName(), candidate.getDateOfBirth().getDayOfYear()) == false) {
 			return new ErrorResult("TCKN Doğrulanamadı.");
 		}
 

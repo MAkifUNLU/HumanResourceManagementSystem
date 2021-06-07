@@ -18,12 +18,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "verification_codes")
 @AllArgsConstructor
 @NoArgsConstructor
-public class VerificationCode {
-	
-	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
-	private int id;
+public class VerificationCode extends Base{
 	
 	@Column(name = "user_id")
 	private int userId;
@@ -34,19 +29,4 @@ public class VerificationCode {
 	@Column(name = "is_confirmed")
 	private boolean isConfirmed;
 
-	@Column(name = "created_at", columnDefinition = "Date defult CURRENT_DATE")
-	private LocalDate createdAt = LocalDate.now();
-	
-	@Column(name= "is_active", columnDefinition = "boolean default true")
-	private boolean isActive = true;
-	
-	@Column(name= "is_deleted", columnDefinition = "boolean default false")
-	private boolean isDeleted = false;
-	
-	public VerificationCode(int userId, String code, boolean isConfirmed) {
-		super();
-		this.userId = userId;
-		this.code = code;
-		this.isConfirmed = isConfirmed;
-	}
 }

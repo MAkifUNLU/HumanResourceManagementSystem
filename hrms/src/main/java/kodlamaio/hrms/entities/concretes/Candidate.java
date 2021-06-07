@@ -2,12 +2,20 @@ package kodlamaio.hrms.entities.concretes;
 
 
 
-import java.sql.Date;
+
+
+import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -38,8 +46,30 @@ public class Candidate extends User{
 	private boolean isVerified = false;
 	
 	@Column(name = "date_of_birth")
-	private Date dateOfBirth;
+	private LocalDate dateOfBirth;
 	
+	@JsonIgnore
+	@OneToMany(mappedBy = "candidate")
+	private List<CvProgrammingSkill> programingSkills;
 	
+	@JsonIgnore
+	@OneToMany(mappedBy = "candidate")
+	private List<CvLink> links;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "candidate")
+	private List<CvForeignLanguage> languages;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "candidate")
+	private List<CvExperience> experiences;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "candidate")
+	private List<CvCoverLetter> coverLetters;	
+
+	@JsonIgnore
+	@OneToOne(mappedBy = "candidate", optional=false, fetch=FetchType.LAZY)
+	private CvImage image;
 	
 }

@@ -10,6 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,7 +24,7 @@ import lombok.NoArgsConstructor;
 @Inheritance(strategy = InheritanceType.JOINED)
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class User extends Base{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,24 +32,12 @@ public class User {
 	private int id;
 	
 	@Column(name = "email")
+	//@Email
+	//@NotBlank
+	//@NotNull
 	private String email;
 	
 	@Column(name = "password")
 	private String password;
 	
-	@Column(name = "created_at", columnDefinition = "Date default CURRENT_DATE")
-	private LocalDate createdAt = LocalDate.now();
-	
-	@Column(name = "is_active", columnDefinition = "boolean default true")
-	private boolean isActive = true;
-	
-	@Column(name = "is_deleted", columnDefinition = "boolean default false")
-	private boolean isDeleted = false;
-	
-	public User(int id, String email, String password) {
-		super();
-		this.id = id;
-		this.email = email;
-		this.password = password;
-	}
 }
