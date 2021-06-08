@@ -5,6 +5,7 @@ import java.util.List;
 import kodlamaio.hrms.core.utilities.results.DataResult;
 import kodlamaio.hrms.core.utilities.results.Result;
 import kodlamaio.hrms.entities.concretes.Candidate;
+import kodlamaio.hrms.entities.dtos.CandidateCVDto;
 
 public interface CandidateService {
 	DataResult<List<Candidate>> getAll();
@@ -14,5 +15,5 @@ public interface CandidateService {
 	Result update(Candidate candidate);
 	
 	DataResult<Candidate> getCandidateByNationalId(String nationalId);
-	//DataResult<CandidateCVDto> getJobseekerCVById(int id);
+	DataResult<CandidateCVDto> getCandidateCVById(int id);
 }

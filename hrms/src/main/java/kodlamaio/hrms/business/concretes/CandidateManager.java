@@ -12,6 +12,7 @@ import kodlamaio.hrms.core.utilities.results.SuccessDataResult;
 import kodlamaio.hrms.core.utilities.results.SuccessResult;
 import kodlamaio.hrms.dataAccess.abstracts.CandidateDao;
 import kodlamaio.hrms.entities.concretes.Candidate;
+import kodlamaio.hrms.entities.dtos.CandidateCVDto;
 
 
 @Service
@@ -56,5 +57,18 @@ public class CandidateManager implements CandidateService{
 	@Override
 	public DataResult<Candidate> getCandidateByNationalId(String nationalId) {
 		return new SuccessDataResult<Candidate>(this.candidateDao.findCandidateByNationalId(nationalId));
+	}
+
+	@Override
+	public DataResult<CandidateCVDto> getCandidateCVById(int id) {
+		Candidate candidate = this.candidateDao.getById(id);
+		CandidateCVDto cv = new CandidateCVDto();
+		cv.experiences = candidate.getExperiences();
+		cv.languages = candidate.getLanguages();
+		cv.image = candidate.getImage();
+		cv.links = candidate.getLinks();
+		cv.programingSkills = candidate.getProgramingSkills();
+		cv.schools = candidate.getSchools();
+		return new SuccessDataResult<CandidateCVDto>(cv);
 	}
 }

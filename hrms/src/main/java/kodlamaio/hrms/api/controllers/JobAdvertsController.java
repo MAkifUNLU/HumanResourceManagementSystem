@@ -21,6 +21,7 @@ public class JobAdvertsController {
 
 	private JobAdvertService jobAdvertService;
 
+	@Autowired
 	public JobAdvertsController(JobAdvertService jobAdvertService) {
 		super();
 		this.jobAdvertService = jobAdvertService;

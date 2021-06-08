@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "cv_images")
 @NoArgsConstructor
 @AllArgsConstructor
-public class CvImage extends Base{
+public class CVImage extends Base{
 
 	@Column(name = "url")
 	private String url;	

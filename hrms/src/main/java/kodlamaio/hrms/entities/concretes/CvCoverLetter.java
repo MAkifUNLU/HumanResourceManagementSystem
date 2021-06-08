@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "cv_cover_letters")
 @AllArgsConstructor
 @NoArgsConstructor
-public class CvCoverLetter extends Base{
+public class CVCoverLetter extends Base{
 
 	@Column(name = "content")
 	private String content;

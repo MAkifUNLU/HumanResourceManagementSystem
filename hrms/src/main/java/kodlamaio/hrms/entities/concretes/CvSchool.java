@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "cv_schools")
 @AllArgsConstructor
 @NoArgsConstructor
-public class CvSchool extends  Base{
+public class CVSchool extends  Base{
 
 	@Column(name = "name")
 	private String schoolName;

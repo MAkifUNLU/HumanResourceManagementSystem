@@ -50,26 +50,30 @@ public class Candidate extends User{
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "candidate")
-	private List<CvProgrammingSkill> programingSkills;
+	private List<CVProgrammingSkill> programingSkills;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "candidate")
-	private List<CvLink> links;
+	private List<CVLink> links;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "candidate")
-	private List<CvForeignLanguage> languages;
+	private List<CVForeignLanguage> languages;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "candidate")
-	private List<CvExperience> experiences;
+	private List<CVExperience> experiences;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "candidate")
-	private List<CvCoverLetter> coverLetters;	
+	private List<CVSchool> schools;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "candidate")
+	private List<CVCoverLetter> coverLetters;	
 
 	@JsonIgnore
 	@OneToOne(mappedBy = "candidate", optional=false, fetch=FetchType.LAZY)
-	private CvImage image;
+	private CVImage image;
 	
 }

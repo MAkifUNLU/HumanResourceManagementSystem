@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "cv_foreign_languages")
 @AllArgsConstructor
 @NoArgsConstructor
-public class CvForeignLanguage extends Base{
+public class CVForeignLanguage extends Base{
 	
 	@Column(name = "language")
 	private String language;
