@@ -44,7 +44,7 @@ public class CVCoverLetterManager implements CVCoverLetterService{
 
 	@Override
 	public DataResult<CVCoverLetter> getById(int id) {
-		return new SuccessDataResult<CVCoverLetter>(this.cVCoverLetterDao.getById(id));
+		return new SuccessDataResult<CVCoverLetter>(this.cVCoverLetterDao.findById(id).get());
 	}
 
 	@Override

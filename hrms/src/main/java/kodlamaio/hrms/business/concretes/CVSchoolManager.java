@@ -44,7 +44,7 @@ public class CVSchoolManager implements CVSchoolService{
 
 	@Override
 	public DataResult<CVSchool> getById(int id) {
-		return new SuccessDataResult<CVSchool>(this.cVSchoolDao.getById(id));
+		return new SuccessDataResult<CVSchool>(this.cVSchoolDao.findById(id).get());
 	}
 
 	@Override

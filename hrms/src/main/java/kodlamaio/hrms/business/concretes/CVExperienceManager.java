@@ -44,7 +44,7 @@ public class CVExperienceManager implements CVExperienceService{
 
 	@Override
 	public DataResult<CVExperience> getById(int id) {
-		return new SuccessDataResult<CVExperience>(this.cVExperienceDao.getById(id));
+		return new SuccessDataResult<CVExperience>(this.cVExperienceDao.findById(id).get());
 	}
 
 	@Override

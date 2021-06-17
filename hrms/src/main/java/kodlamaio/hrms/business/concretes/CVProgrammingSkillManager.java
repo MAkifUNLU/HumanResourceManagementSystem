@@ -44,7 +44,7 @@ public class CVProgrammingSkillManager implements CVProgrammingSkillService{
 
 	@Override
 	public DataResult<CVProgrammingSkill> getById(int id) {
-		return new SuccessDataResult<CVProgrammingSkill>(this.cVProgrammingSkillDao.getById(id));
+		return new SuccessDataResult<CVProgrammingSkill>(this.cVProgrammingSkillDao.findById(id).get());
 	}
 
 	@Override

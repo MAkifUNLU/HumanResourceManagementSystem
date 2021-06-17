@@ -44,7 +44,7 @@ public class CVForeignLanguageManager implements CVForeignLanguageService{
 
 	@Override
 	public DataResult<CVForeignLanguage> getById(int id) {
-		return new SuccessDataResult<CVForeignLanguage>(this.cVForeignLanguageDao.getById(id));
+		return new SuccessDataResult<CVForeignLanguage>(this.cVForeignLanguageDao.findById(id).get());
 	}
 
 	@Override

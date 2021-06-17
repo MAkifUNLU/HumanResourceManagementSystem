@@ -43,7 +43,7 @@ public class VerificationCodeManager implements VerificationCodeService{
 	}
 	@Override
 	public DataResult<VerificationCode> getById(int id) {
-		return new SuccessDataResult<VerificationCode>(this.verificationCodeDao.getById(id));
+		return new SuccessDataResult<VerificationCode>(this.verificationCodeDao.findById(id).get());
 	}
 
 	@Override

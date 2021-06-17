@@ -31,7 +31,7 @@ private UserDao userDao;
 
 	@Override
 	public DataResult<User> getById(int id) {
-		return new SuccessDataResult<User>(this.userDao.getById(id));
+		return new SuccessDataResult<User>(this.userDao.findById(id).get());
 	}
 
 	@Override

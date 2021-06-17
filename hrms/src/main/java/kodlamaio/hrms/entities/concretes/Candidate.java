@@ -7,6 +7,8 @@ package kodlamaio.hrms.entities.concretes;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -19,12 +21,14 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
 @Entity
 @Table(name = "candidates")
 @PrimaryKeyJoinColumn(name = "user_id")
+//@EqualsAndHashCode(callSuper=false)
 @AllArgsConstructor
 @NoArgsConstructor
 public class Candidate extends User{
@@ -73,7 +77,7 @@ public class Candidate extends User{
 	private List<CVCoverLetter> coverLetters;	
 
 	@JsonIgnore
-	@OneToOne(mappedBy = "candidate", optional=false, fetch=FetchType.LAZY)
+	@OneToOne(mappedBy = "candidate", optional=true, fetch=FetchType.LAZY)
 	private CVImage image;
 	
 }

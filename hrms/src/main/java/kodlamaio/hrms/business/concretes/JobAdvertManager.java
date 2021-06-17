@@ -64,7 +64,7 @@ public class JobAdvertManager implements JobAdvertService{
 
 	@Override
 	public DataResult<JobAdvert> getById(int id) {
-		return new SuccessDataResult<JobAdvert>(this.jobAdvertDao.getById(id));
+		return new SuccessDataResult<JobAdvert>(this.jobAdvertDao.findById(id).get());
 	}
 
 	@Override

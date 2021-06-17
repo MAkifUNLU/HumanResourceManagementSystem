@@ -44,7 +44,7 @@ public class CVLinkManager implements CVLinkService{
 
 	@Override
 	public DataResult<CVLink> getById(int id) {
-		return new SuccessDataResult<CVLink>(this.cVLinkDao.getById(id));
+		return new SuccessDataResult<CVLink>(this.cVLinkDao.findById(id).get());
 	}
 
 	@Override

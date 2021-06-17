@@ -51,7 +51,7 @@ public class CVImageManager implements CVImageService{
 
 	@Override
 	public DataResult<CVImage> getById(int id) {
-		return new SuccessDataResult<CVImage>(this.cVImageDao.getById(id));
+		return new SuccessDataResult<CVImage>(this.cVImageDao.findById(id).get());
 	}
 
 	@Override

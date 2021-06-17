@@ -21,7 +21,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "cities")
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "jobAdvertisements"})
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "jobAdverts"})
 public class City extends Base{
 	
 	
@@ -31,6 +31,6 @@ public class City extends Base{
 	@OneToMany(mappedBy = "city")
 	private List<JobAdvert> jobAdverts;
 	
-	 
+	 	
 } 
  
